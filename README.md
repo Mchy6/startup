@@ -28,3 +28,16 @@ I am going to use the required technologies in the following ways.
 - **Authentication** - Includes login page to create account or log back in to existing account. Account name is displayed on login page.
 - **Database data** - Users' past quizzes and scores will be stored in database.
 - **WebSocket data** - Other users results for tests in the same region will be displayed in real time
+
+### HTML Deliverable
+
+For this deliverable I built out the structure of my application using HTML.
+
+- Simon HTML is deployed to my production environment (simon.birdquiz.click)
+- A link to my GitHub startup respository is in the footer of each page of startup.birdquiz.click
+- Four different interlinking HTML webpages with appropriate textual content
+- Placeholder for 3rd party service calls are found on the learn page, in the form of a recording
+- There are two images on the My Journey page and one image on the home page
+- There is a login placeholder on the home page and a placeholder for username in the header of every other page.
+- There are placeholders on the My Journey page for content that will be stored in the database (user's quiz scores), and where realtime communication will go (other users' quiz scores), represented by graph images
+- There are several Git commits with adequate comments
