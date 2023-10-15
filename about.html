@@ -6,32 +6,39 @@
         <title>About</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"/>
 
-        
         <link rel="icon" href="birdIcon.png" />
+        <link rel="stylesheet" href="main.css" />
     </head>
-    <body class="bg-dark text-light">
-        <header>
-            <a href="index.html"><h3>BirdQuiz</h3></a>
-            <nav>
-                <menu>
-                    <li><a href="learn.html">Learn</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="myJourney.html">My Journey</a></li>
-                    <li>Signed in as </li>
+    <body class="bg-dark">
+        <header class="container-fluid">
+            <nav class="navbar">
+                <img src="birdIcon.png" alt="Bird Icon" width="50" style="margin-bottom:8px">
+                <a href="index.html"><h2 style="font-size:38px; margin-left:5px">BirdQuiz</h2></a>
+                <menu class="navbar-nav">
+                    <button style="margin: 0 10px;"><a href="learn.html">Learn</a></button>
+                    <li class="nav-item"><a href="about.html">About</a></li>
+                    <li class="nav-item"><a href="myJourney.html">My Journey</a></li>
+                    <li class="nav-item">Signed in as ...</li>
                 </menu>
             </nav>
-            <hr>
         </header>
         <main>
-            <h1>About</h1>
-            <p>This is a website intended to teach people how to learn bird calls, developed by Matthew Bailey for his C S 260 Web Programming class.</p>
+            <div class="bd-example bd-example-placeholder-cards d-flex justify-content-around">
+                <div class="card" style="margin-right:30px;">
+                  <div class="card-body" style="margin-right:10px;
+                  margin-left:10px;margin-top:100px;margin-bottom:100px"> 
+                    <div class="login-container">
+                        <h5 class="card-title">About</h5>
+                        <p>This is a website intended to teach people how to learn bird calls, </p>
+                        <p>developed by Matthew Bailey for his C S 260 Web Programming class.</p>
+                    </div>
+                   </div>
+                </div>
+            </div>
         </main>
 
         <footer>
-            
-            <hr>
             <a href = "https://github.com/Mchy6/startup">GitHub Repository</a>
             <div> Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik"> Freepik </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-
         </footer>
     </body>
