@@ -1,0 +1,122 @@
+/* All: */
+a {
+    text-decoration: none;
+    color:#F4FCEF;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+    background-image: url('treeSwallow.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 0px 50px;
+    background-color: darkgray;
+    color:#F4FCEF;
+}
+@media (max-height: 600px) {
+    header {
+      display: none;
+    }
+    footer {
+      display: none;
+    }
+    main {
+      flex: 1 100vh;
+    }
+  }
+  
+
+
+/* Navigation Bar */
+header {
+    flex: 0 80px;
+    z-index: 100; 
+}
+menu {
+    flex: 1;
+    display: flex;
+    /*  overwrite Bootstrap so the menu does not wrap */
+    flex-direction: row !important;
+    list-style: none;
+}
+.navbar {
+    background: #4a5643;
+    align-items:flex-end;
+    padding-right: 10px;
+    padding-left: 10px;
+    height: 90px;
+}
+    .navbar-nav {
+    display: flex; 
+    justify-content: right;
+    align-items:flex-end;
+}
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+menu .nav-item {
+    padding: 3px 10px;
+}
+
+
+/* Main Content */
+main {
+    flex: 1 calc(100vh - 110px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+.card {
+    color: black;
+}
+.login-container {
+    padding-bottom: 50px; /* Add padding to the container to create space around its contents */
+    padding-top: 50px;
+}
+
+.login-container label,
+.login-container input {
+    margin-bottom: 30px; /* Add margin between labels and input fields */
+}
+
+
+
+
+/* Footer */
+footer {
+    flex: 0 30px;
+    background: #4a5643;
+    align-items: flex-end;
+}
+
+
+/* Miscellaneous */
+button { background-color: #FFFBCE; border-radius:10px; border-color:transparent; 
+    padding: 3px 10px 3px 10px; 
+}
+button a { color: black; }
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
