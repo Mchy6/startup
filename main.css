@@ -7,14 +7,23 @@ body {
     display: flex;
     flex-direction: column;
     min-width: 200px;
-    background-image: url('treeSwallow.png');
     background-size: cover;
     background-attachment: fixed;
     background-position: 0px 50px;
-    background-color: darkgray;
     color:#F4FCEF;
 }
 @media (max-height: 600px) {
+    header {
+      display: none;
+    }
+    footer {
+      display: none;
+    }
+    main {
+      flex: 1 100vh;
+    }
+  }
+@media (max-width: 420px) {
     header {
       display: none;
     }
@@ -46,6 +55,8 @@ menu {
     padding-right: 10px;
     padding-left: 10px;
     height: 90px;
+    display:flex;
+    justify-content: space-between;
 }
     .navbar-nav {
     display: flex; 
@@ -98,6 +109,12 @@ button { background-color: #FFFBCE; border-radius:10px; border-color:transparent
     padding: 3px 10px 3px 10px; 
 }
 button a { color: black; }
+.greenButton {
+    background-color: #4a5643; 
+    color: #F4FCEF;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
 
 
 
