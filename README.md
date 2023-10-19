@@ -41,3 +41,17 @@ For this deliverable I built out the structure of my application using HTML.
 - There is a login placeholder on the home page and a placeholder for username in the header of every other page.
 - There are placeholders on the My Journey page for content that will be stored in the database (user's quiz scores), and where realtime communication will go (other users' quiz scores), represented by graph images
 - There are several Git commits with adequate comments
+
+### CSS Deliverable
+
+- For this deliverable I properly styled the application into its final appearance.
+
+- Simon CSS is deployed to my production environment (simon.birdquiz.click)
+- A link to my GitHub startup repository is in the footer of each page of startup.birdquiz.click
+- Header, footer, and main content body fully styled with CSS
+- Navigation elements were updated, "Learn" became a button, colors were changed and underline is gone
+- @media controls are implemented in CSS to hide header/footer when the screen size gets too small
+- Application elements are present in the form of cards, buttons, and an audio player
+- Text content on every page
+- Images are present on every page but learn.html 
+- There are several Git commits with adquate comments
