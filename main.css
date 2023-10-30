@@ -114,9 +114,40 @@ button a { color: black; }
     color: #F4FCEF;
     margin-top: 3px;
     margin-bottom: 3px;
+    transition: all 0.3s;
+}
+.greenButton:hover {
+  background: #FFFBCE;
+  color: black;
 }
 
+.quizButton {
+  background-color: #4a5643; 
+  color: #F4FCEF;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  width : 100%;
+  text-align: left;
+  transition: all 0.3s;
+}
+.quizButton:hover:not([disabled]) {
+background: #FFFBCE;
+color: black;
+}
 
+#next-button {
+  width: 150px;
+  padding: 10px;
+  margin: 20px auto 0;
+  cursor: pointer;
+  display: block;
+}
+.correct {
+  background: #9aeabc;
+}
+.incorrect {
+  background: #ff9393;
+}
 
   
   

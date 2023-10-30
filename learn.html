@@ -7,6 +7,7 @@
         <title>Learn</title>
         <link rel="icon" href="birdIcon.png" />
         <link rel="stylesheet" href="main.css" />
+        <script defer src="learn.js"></script>
     </head>
 
 
@@ -20,7 +21,11 @@
                     <button style="margin: 0 10px;"><a href="learn.html">Learn</a></button>
                     <li class="nav-item"><a href="about.html">About</a></li>
                     <li class="nav-item"><a href="myJourney.html">My Journey</a></li>
-                    <li class="nav-item">Signed in as ...</li>
+                    <li class="nav-item" id="nameDisplay"></li>
+                    <script>
+                        let name = localStorage.getItem('username');
+                        document.getElementById("nameDisplay").textContent = "Signed in as " + name;
+                    </script>
                 </menu>
             </nav>
         </header>
@@ -31,13 +36,16 @@
                   margin-left:30px;margin-top:50px;margin-bottom:50px"> 
                     <div class="login-container">
                         <h5 class="card-title"style="text-align:center">What's this bird?</h5>
-                        "Caw, caw"<br>
-                        <audio controls src="Bird recordings\XC462765 - American Crow - Corvus brachyrhynchos.mp3"></audio><br>
-                        <i>Show hint</i><br>
-                        <button type="submit" class="greenButton">American Crow</button><br>
-                        <button type="submit" class="greenButton">Common Raven</button><br>
-                        <button type="submit" class="greenButton">American Robin</button><br>
-                        <button type="submit" class="greenButton">Dark-eyed Junco</button>
+                        <h6 id="vocalization">Vocalization here</h6>
+                        <div id="recording"></div><br>
+                        <!-- <i>Show hint</i><br> -->
+                        <div id="answer-buttons">
+                            <button type="submit" class="quizButton">A1</button><br>
+                            <button type="submit" class="quizButton">A2</button><br>
+                            <button type="submit" class="quizButton">A3</button><br>
+                            <button type="submit" class="quizButton">A4</button><br>
+                        </div>
+                        <button type="submit" id="next-button">Next</button>
                     </div>
                    </div>
                 </div>

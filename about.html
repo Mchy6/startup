@@ -19,7 +19,11 @@
                     <button style="margin: 0 10px;"><a href="learn.html">Learn</a></button>
                     <li class="nav-item"><a href="about.html">About</a></li>
                     <li class="nav-item"><a href="myJourney.html">My Journey</a></li>
-                    <li class="nav-item">Signed in as ...</li>
+                    <li class="nav-item" id="nameDisplay"></li>
+                    <script>
+                        let name = localStorage.getItem('username');
+                        document.getElementById("nameDisplay").textContent = "Signed in as " + name;
+                    </script>
                 </menu>
             </nav>
         </header>

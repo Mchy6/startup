@@ -8,6 +8,7 @@
         <title>My Journey</title>
         <link rel="icon" href="birdIcon.png" />
         <link rel="stylesheet" href="main.css" />
+        <script defer src="myJourney.js"></script>
     </head>
     <body class="bg-dark">
         <header class="container-fluid">
@@ -18,18 +19,22 @@
                     <button style="margin: 0 10px;"><a href="learn.html">Learn</a></button>
                     <li class="nav-item"><a href="about.html">About</a></li>
                     <li class="nav-item"><a href="myJourney.html">My Journey</a></li>
-                    <li class="nav-item">Signed in as ...</li>
+                    <li class="nav-item" id="nameDisplay"></li>
+                    <script>
+                        let name = localStorage.getItem('username');
+                        document.getElementById("nameDisplay").textContent = "Signed in as " + name;
+                    </script>
                 </menu>
             </nav>
         </header>
         <main style="align-items:flex-start; padding-left:30px;">
             <h2>My Journey</h2>
             <h4>Track your progress here</h4>
-            <img src="https://user-images.githubusercontent.com/6562690/54934415-b4d25b80-4edb-11e9-8758-fb29ada50499.png" alt="placeholder for a graph of progress" width="400">
+            <div id="scoreList"></div>
+            <!-- <img src="https://user-images.githubusercontent.com/6562690/54934415-b4d25b80-4edb-11e9-8758-fb29ada50499.png" alt="placeholder for a graph of progress" width="400"> -->
             <hr>
             <h4>Compare your progress to similar users</h4>
-            <img src="https://user-images.githubusercontent.com/6562690/54934415-b4d25b80-4edb-11e9-8758-fb29ada50499.png" alt="placeholder for a graph of progress" width="400">
-            
+            <div>Mystery User scored 2 out of 5</div>            
         </main>
 
         <footer>
