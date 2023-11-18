@@ -36,10 +36,10 @@ const questions = [
         vocalization: "A series of low, whistled phrases",
         recording: robin,
         answers: [
-            { text: "American Robin", correct: true },
             { text: "Townsend's Solitaire", correct: false },
             { text: "House Finch", correct: false },
-            { text: "House Sparrow", correct: false }
+            { text: "House Sparrow", correct: false },
+            { text: "American Robin", correct: true }
         ]
     },
     {
@@ -86,6 +86,7 @@ function startQuiz() {
     currentQuestionIndex = 0;
     score = 0;
     nextButton.innerHTML = "Next";
+
     showQuestion();
 }
 function showQuestion() {
@@ -115,7 +116,6 @@ function resetState() {
     while (recordingElement.firstChild) {
         recordingElement.removeChild(recordingElement.firstChild);
     }
-    
 }
 
 function selectAnswer(e) {
@@ -142,8 +142,55 @@ function showScore() {
     nextButton.innerHTML = "Restart";
     nextButton.style.display = "block";
     recordingElement.style.display = "none";
-    localStorage.setItem('score', `${score} out of ${questions.length}`);
+    this.saveScore('score', `${score} out of ${questions.length}`);
+    // localStorage.setItem('score', `${score} out of ${questions.length}`);
 }
+
+async function saveScore(score) {
+    try {
+      const response = await fetch('/api/score', {
+        method: 'POST',
+        headers: {'content-type': 'application/json'},
+        body: JSON.stringify(score),
+      });
+
+      // Store what the service gave us as the high scores
+      const scores = await response.json();
+      localStorage.setItem('scores', JSON.stringify(scores));
+    } catch {
+      // If there was an error then just track scores locally
+      this.updateScoresLocal(newScore);
+    }
+}
+
+updateScoresLocal(newScore) {
+    let scores = [];
+    const scoresText = localStorage.getItem('scores');
+    if (scoresText) {
+      scores = JSON.parse(scoresText);
+    }
+
+    let found = false;
+    for (const [i, prevScore] of scores.entries()) {
+      if (newScore > prevScore.score) {
+        scores.splice(i, 0, newScore);
+        found = true;
+        break;
+      }
+    }
+
+    if (!found) {
+      scores.push(newScore);
+    }
+
+    if (scores.length > 10) {
+      scores.length = 10;
+    }
+
+    localStorage.setItem('scores', JSON.stringify(scores));
+}
+
+
 
 function handleNextButton() {
     currentQuestionIndex++;

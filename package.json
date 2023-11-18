@@ -1,0 +1,16 @@
+{
+  "name": "startup",
+  "version": "1.0.0",
+  "description": "People are always impressed when I can accurately identify birds simply by listening to their calls, and nothing else. It seems like a strange, difficult task to learn this skill, but in reality, anyone can with a bit of practice. That's where my website comes in. When a user enters the website and logs in, they can practice learning the most common bird calls from their region with a quiz that has a flashcard-like structure. Progress is saved to their account, so they can pick up where they left off and see their skills improve.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "create-express": "^1.0.2",
+    "express": "^4.18.2"
+  }
+}
