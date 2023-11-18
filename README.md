@@ -55,3 +55,12 @@ For this deliverable I built out the structure of my application using HTML.
 - Text content on every page
 - Images are present on every page but learn.html 
 - There are several Git commits with adquate comments
+
+### JavaScript Deliverable
+
+For this deliverable I implemented by JavaScript so that the application works for a single user. I also added placeholders for future technology.
+- login - When you press enter or the login button it takes you to the myJourney page, and username and password are stored.
+- database - Displayed user's past score on myJourney. Username is displayed in header. Currently these are stored and retrieved from local storage, but it will be replaced with the database data later.
+- WebSocket - A representation of other user's scores is found on the myJourney page. This will be replaced with WebSocket messages later.
+- application logic - Quiz fully implemented on the learn page
+- There are several Git commits with adquate comments
