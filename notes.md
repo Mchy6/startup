@@ -13,3 +13,9 @@ ssh -i ~mmchy/OneDrive/Desktop/CS260/CS260.pem ubuntu@birdquiz.click
 **Public IPv4 address:** 35.171.50.62
 
 **Deploy files:** (in git bash, in correct directory) ./deployService.sh -k ~/onedrive/desktop/cs260/CS260.pem -h birdquiz.click -s simon
+
+
+Connection string for mongodb:
+mongodb+srv://cs260:EfYtMZZea3KwAM5F.yvb@atlascluster.j3jujvz.mongodb.net/?retryWrites=true&w=majority
+or maybe this, I don't know if you need the < and >:
+mongodb+srv://cs260:<EfYtMZZea3KwAM5F>@atlascluster.j3jujvz.mongodb.net/?retryWrites=true&w=majority
