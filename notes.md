@@ -17,9 +17,5 @@ ssh -i ~mmchy/OneDrive/Desktop/CS260/CS260.pem ubuntu@birdquiz.click
 
 
 **Connection string for mongodb:**
+mongodb+srv://cs260:EfYtMZZea3KwAM5F@atlascluster.j3jujvz.mongodb.net/?retryWrites=true&w=majority
 
-mongodb+srv://cs260:EfYtMZZea3KwAM5F.yvb@atlascluster.j3jujvz.mongodb.net/?retryWrites=true&w=majority
-
-or maybe this, I don't know if you need the < and >:
-
-mongodb+srv://cs260:<EfYtMZZea3KwAM5F>@atlascluster.j3jujvz.mongodb.net/?retryWrites=true&w=majority
