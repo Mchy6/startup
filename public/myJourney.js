@@ -1,5 +1,5 @@
 async function loadScores() {
-    let scores = []
+    let scores = [];
     try {
         scoresResponse = await fetch('/api/scores');
         scores= await scoresResponse.json();
@@ -9,35 +9,28 @@ async function loadScores() {
     if (scoresText) {
       scores = JSON.parse(scoresText);
     }
+    console.log("scores:")
+    console.log(scores);
     displayScores(scores);
     }
 
-function displayScores(scores) {
-    const userScoreListElement = document.querySelector('#userScoreList');
-    for (const [username, score] of scores) {
-        if(username === localStorage.getItem('username')) {
+    function displayScores(scores) {
+        const userScoreListElement = document.querySelector('#userScoreList');
+        for (const [username, score] of scores) {
+            if(username === localStorage.getItem('username')) {
+                const scoreRow = document.createElement('tr');
+                scoreRow.innerHTML = `<td>${score}</td>`;
+                listElement.appendChild(scoreRow);
+            }
+        }
+        const allScoreListElement = document.querySelector('#allScoreList');
+        for (const [username, score] of userScores) {
             const scoreRow = document.createElement('tr');
             scoreRow.innerHTML = `<td>${score}</td>`;
             listElement.appendChild(scoreRow);
         }
+
     }
-    const allScoreListElement = document.querySelector('#allScoreList');
-    for (const [username, score] of userScores) {
-        const scoreRow = document.createElement('tr');
-        scoreRow.innerHTML = `<td>${score}</td>`;
-        listElement.appendChild(scoreRow);
-    }
-
-}
-
-loadScores();
-    
-
-
-
-
-
-
 
 
 
@@ -48,5 +41,5 @@ loadScores();
     } else {
         scoreList.innerHTML = '<tr><td colSpan=4>No quizzes logged yet</td></tr>';
     }
-  }
-  loadScores();
+}
+loadScores();

@@ -18,7 +18,33 @@ let sparrow = document.createElement('audio');
 sparrow.src = "Bird%20recordings/XC830449%20-%20House%20Sparrow%20-%20Passer%20domesticus.wav";
 sparrow.controls = true;
 
+/*
+based on the common name, returns the scientific name of the bird
+Intend to have scientific name following the common name in the quiz answers
+*/
 
+// function getSciName(cmnName) {
+//     fetch('https://nuthatch.lastelm.software/v2/birds', { 
+//       headers: {
+//         'api-key': '9bde2814-56b7-4785-85c6-bef69e72f7da'
+//       }
+//     })
+//     .then((response) => {
+//       if (!response.ok) {
+//         throw new Error('Network response was not OK');
+//       }
+//       return response.json();
+//     })
+//     .then((data) => {
+//       let bird = data["entities"]
+//       if(cmnName == "crow") {
+//         return bird["sciName"];
+//       }
+//     })
+//     .catch((error) => {
+//       console.error('There has been a problem with your fetch operation:', error);
+//     });
+//   }
 
 const questions = [
     {
@@ -83,7 +109,7 @@ let currentQuestionIndex = 0;
 let score = 0;
 
 function startQuiz() {
-    currentQuestionIndex = 0;
+    currentQuestionIndex = 4;
     score = 0;
     nextButton.innerHTML = "Next";
 
@@ -142,45 +168,49 @@ function showScore() {
     nextButton.innerHTML = "Restart";
     nextButton.style.display = "block";
     recordingElement.style.display = "none";
-    this.saveScore('score', `${score} out of ${questions.length}`);
+    this.saveScore(`${this.getPlayerName()} scored ${score} out of ${questions.length}`);
     // localStorage.setItem('score', `${score} out of ${questions.length}`);
 }
 
-async function saveScore(score) {
+async function saveScore(scoreString1) {
+    const scoreString = {score: scoreString1}; 
     try {
-      const response = await fetch('/api/score', {
-        method: 'POST',
-        headers: {'content-type': 'application/json'},
-        body: JSON.stringify(score),
-      });
+        const response = await fetch('/api/score', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(scoreString),
+        });
 
-      // Store what the service gave us as the high scores
-      const scores = await response.json();
-      localStorage.setItem('scores', JSON.stringify(scores));
-    } catch {
-      // If there was an error then just track scores locally
-      this.updateScoresLocal(newScore);
+        // Log response details
+        console.log('Response Status:', response.status);
+        console.log('Response Headers:', response.headers);
+
+        if (!response.ok) {
+            // If the response status is not OK (e.g., 400 Bad Request), throw an error
+            throw new Error('Server responded with an error');
+        }
+
+        // Ensure the server responded with a JSON object
+        const scores = await response.json();
+        console.log('Response JSON:', scores);
+
+        localStorage.setItem('scores', JSON.stringify(scores));
+    } catch (error) {
+        console.error('Error saving score:', error);
+        // Handle the error or rethrow it if needed
+        // For now, let's just log the error and not update local scores
+        // this.updateScoresLocal(scoreString);
     }
 }
 
-updateScoresLocal(newScore) {
+
+
+function updateScoresLocal(scoreString) {
     let scores = [];
     const scoresText = localStorage.getItem('scores');
     if (scoresText) {
       scores = JSON.parse(scoresText);
-    }
-
-    let found = false;
-    for (const [i, prevScore] of scores.entries()) {
-      if (newScore > prevScore.score) {
-        scores.splice(i, 0, newScore);
-        found = true;
-        break;
-      }
-    }
-
-    if (!found) {
-      scores.push(newScore);
+      scores.push(scoreString);
     }
 
     if (scores.length > 10) {
@@ -188,6 +218,10 @@ updateScoresLocal(newScore) {
     }
 
     localStorage.setItem('scores', JSON.stringify(scores));
+}
+
+function getPlayerName() {
+    return localStorage.getItem('userName') ?? 'Mystery player';
 }
 
 
