@@ -20,7 +20,9 @@ app.use(`/api`, apiRouter);
 
 // GetScores
 apiRouter.get('/scores', (_req, res) => {
+  console.log("Inside get scores endpoint")
   res.send(scores);
+  
 });
 
 // SubmitScore
