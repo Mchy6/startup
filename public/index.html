@@ -19,10 +19,25 @@
                 <img src="birdIcon.png" alt="Bird Icon" width="50" style="margin-bottom:8px">
                 <a href="index.html"><h2 style="font-size:38px; margin-left:5px">BirdQuiz</h2></a>
                 <menu class="navbar-nav">
-                    <button style="margin: 0 10px;"><a href="learn.html">Learn</a></button>
                     <li class="nav-item"><a href="about.html">About</a></li>
-                    <li class="nav-item"><a href="index.html">Sign in</a></li>
+                    <li class="nav-item" id="nameDisplay"></li>
+                    <script>
+                        // Check if there is a username in localStorage
+                        let name = localStorage.getItem('username');
+                
+                        if (name) {
+                            // Display "Learn" button if a username exists
+                            document.write('<button style="margin: 0 10px;"><a href="learn.html">Learn</a></button>');
+                
+                            // Display "My Journey" link if a username exists
+                            document.write('<li class="nav-item"><a href="myJourney.html">My Journey</a></li>');
+                
+                            // Display the username in the navbar
+                            document.getElementById("nameDisplay").textContent = "Signed in as " + name;
+                        }
+                    </script>
                 </menu>
+                              
             </nav>
         </header>
         <main>
