@@ -74,3 +74,11 @@ For this deliverable I added backend endpoints that makes users' scores visible 
 - Backend service endpoints - Scores are posted on "learn" page when a quiz is completed
 - Frontend calls service endpoints - Scores are gotten on the "MyJourney" page when opened
 - There are multiple Git commits with meaningful comments
+
+## DB deliverable
+
+For this deliverable I stored scoresin the database.
+- **MongoDB Atlas database created** - done!
+- **Endpoints for data** - My stubbed out endpoints now process the data and send it to Mongo.
+- **Stores data in MongoDB** - done!
+- There are Git commits with meaningful comments
