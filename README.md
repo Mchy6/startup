@@ -75,10 +75,20 @@ For this deliverable I added backend endpoints that makes users' scores visible 
 - Frontend calls service endpoints - Scores are gotten on the "MyJourney" page when opened
 - There are multiple Git commits with meaningful comments
 
-## DB deliverable
+### DB Deliverable
 
 For this deliverable I stored scoresin the database.
 - **MongoDB Atlas database created** - done!
 - **Endpoints for data** - My stubbed out endpoints now process the data and send it to Mongo.
 - **Stores data in MongoDB** - done!
 - There are Git commits with meaningful comments
+
+### Login Deliverable
+
+For this deliverable I associate the votes with the logged in user.
+- User registration - Creates a new account in the database.
+- existing user - Stores scores under the same user if the user already exists.
+- Use MongoDB to store credentials - Stores both user and their scores.
+- Restricts functionality - You cannot view "MyJourney" or "Learn" page before logging in.
+- Multiple git commits with comments
+
