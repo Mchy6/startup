@@ -12,7 +12,7 @@ ssh -i ~mmchy/OneDrive/Desktop/CS260/CS260.pem ubuntu@birdquiz.click
 
 **Public IPv4 address:** 35.171.50.62
 
-**Deploy files:** (in git bash, in correct directory) ./deployService.sh -k ~/Desktop/CS260/CS260.pem -h birdquiz.click -s simon
+**Deploy files:** (in git bash, in correct directory) ./deployReact.sh -k ~/Desktop/CS260/CS260.pem -h birdquiz.click -s simon
 
 
 
