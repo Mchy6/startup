@@ -100,3 +100,12 @@ For this deliverable I used webSocket to show users' scores in real time.
 - Data sent over WebSocket connection - done!
 - WebSocket data displayed - Users' scores are displayed on the "play" page in real time.
 - Multiple git commits with adequate comments
+
+### React Deliverable
+For this deliverable I converted the application over to use React.
+
+- Bundled using WebPack and Babel - done!
+- Components - multiple react components functioning throughout project
+- Router - Routing between login and quiz components.
+- Hooks - React hooks used including useRef, useState
+- Git commits with adquate comments
