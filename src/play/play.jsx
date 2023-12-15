@@ -20,10 +20,6 @@ export function Play() {
 
     const checkAns = (e, ans) => {
       if(lock === false) {
-        if (index === data.length-1) {
-          setResult(true);
-          return 0;
-        }
         if (question.ans===ans) {
           e.target.classList.add("correct");
           setLock(true);
@@ -40,6 +36,10 @@ export function Play() {
 
     const next = ()=> {
       if (lock === true) {
+        if (index === data.length-1) {
+          setResult(true);
+          return 0;
+        }
         setIndex(++index);
         setQuestion(data[index]);
         setLock(false);
@@ -50,11 +50,20 @@ export function Play() {
         })
       }
     }
+
+    const reset = () => {
+      setIndex(0);
+      setQuestion(data[0]);
+      setScore(0);
+      setLock(false);
+      setResult(false);
+    }
+
   return (
     <div className='container1'>
-      <h1>Quiz App</h1>
+      <h1>Learn Bird Calls</h1>
       <hr />
-      {result?<></>:<></>}
+      {result?<></>:<>
       <h2>{index+1}. {question.question}</h2>
       <ul>
         <li ref={option1} onClick={(e)=>{checkAns(e,1)}}>{question.option1}</li>
@@ -64,6 +73,11 @@ export function Play() {
       </ul>
       <button onClick={next}>Next</button>
       <div className='index'>Question {index+1} of {data.length}</div>
+      </>}
+      {result?<>
+        <h2>You scored {score} out of {data.length}</h2>
+        <button onClick={reset}>Restart</button>
+      </>:<></>}
     </div>
   );
 }
