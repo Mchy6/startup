@@ -98,7 +98,7 @@ For this deliverable I used webSocket to show users' scores in real time.
 - Backend listens for WebSocket connection - done!
 - Frontend makes WebSocket connection - done!
 - Data sent over WebSocket connection - done!
-- WebSocket data displayed - Users' scores are displayed on the "play" page in real time.
+- WebSocket data displayed - Other usernames are displayed when they complete a quiz
 - Multiple git commits with adequate comments
 
 ### React Deliverable
