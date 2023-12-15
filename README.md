@@ -92,3 +92,11 @@ For this deliverable I associate the votes with the logged in user.
 - Restricts functionality - You cannot view "MyJourney" or "Learn" page before logging in.
 - Multiple git commits with comments
 
+### Websocket Deliverable
+
+For this deliverable I used webSocket to show users' scores in real time.
+- Backend listens for WebSocket connection - done!
+- Frontend makes WebSocket connection - done!
+- Data sent over WebSocket connection - done!
+- WebSocket data displayed - Users' scores are displayed on the "play" page in real time.
+- Multiple git commits with adequate comments
