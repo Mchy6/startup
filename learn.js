@@ -18,11 +18,6 @@ let sparrow = document.createElement('audio');
 sparrow.src = `Bird%20recordings/XC830449%20-%20House%20Sparrow%20-%20Passer%20domesticus.wav`;
 sparrow.controls = true;
 
-/*
-based on the common name, returns the scientific name of the bird
-Intend to have scientific name following the common name in the quiz answers
-*/
-
 async function getSciName(cmnName) {
     try {
         const response = await fetch('https://nuthatch.lastelm.software/v2/birds?pageSize=1&name=' + cmnName, {

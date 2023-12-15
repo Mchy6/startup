@@ -4,28 +4,21 @@
   "description": "People are always impressed when I can accurately identify birds simply by listening to their calls, and nothing else. It seems like a strange, difficult task to learn this skill, but in reality, anyone can with a bit of practice. That's where my website comes in. When a user enters the website and logs in, they can practice learning the most common bird calls from their region with a quiz that has a flashcard-like structure. Progress is saved to their account, so they can pick up where they left off and see their skills improve.",
   "main": "index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
-    "bootstrap": "^5.3.2",
     "cookie-parser": "^1.4.6",
     "create-express": "^1.0.2",
     "express": "^4.18.2",
     "mongodb": "^6.3.0",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.9.1",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.0",
     "uuid": "^9.0.1",
-    "ws": "^8.15.1"
-  },
-  "devDependencies": {
-    "vite": "^5.0.9"
+    "ws": "^8.14.2"
   }
 }
