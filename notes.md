@@ -138,7 +138,7 @@ Attributes:
 class="question"
 ID=”sjf*2”
 Comments:
-<!-- commented text →
+<!-- commented text -->
 Special characters - see github
 
 
